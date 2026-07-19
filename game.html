@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarks Casino - Custom Craps Game</title>
+    <!-- Styling for a great User Experience -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .casino-card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #00ffcc;
+        }
+        h1 {
+            color: #00ffcc;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        /* Styling the form and input fields */
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #00ffcc;
+        }
+        /* Custom game trigger button */
+        input[type="submit"] {
+            background-color: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00b38f;
+        }
+        /* Dynamic output container style */
+        #gameOutput {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #252525;
+            min-height: 50px;
+            line-height: 1.6;
+        }
+        .error { color: #ff5555; font-weight: bold; }
+        .lose { color: #ff5555; font-weight: bold; font-size: 1.2rem; }
+        .win { color: #00ff66; font-weight: bold; font-size: 1.2rem; }
+        .push { color: #ffcc00; font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <div class="casino-card">
+        <h1>Quarks Casino</h1>
+        <p class="subtitle">Welcome! Enter your name to play our special variant of Craps.</p>
+
+        <!-- Form submission requirement - standard onsubmit execution -->
+        <form id="gameForm" onsubmit="return runCasinoGame();">
+            <label for="username">Player Name:</label>
+            <!-- User text input element -->
+            <input type="text" id="username" placeholder="Type your name here..." required>
+            <br>
+            <!-- Form submission button to launch the game logic -->
+            <input type="submit" value="Play Game">
+        </form>
+
+        <!-- Target area where JavaScript will inject content via innerHTML -->
+        <div id="gameOutput">Press the button above to roll the dice.</div>
+    </div>
+
+    <!-- Link to the external JavaScript file layout -->
+    <script src="code.js"></script>
+</body>
+</html>
